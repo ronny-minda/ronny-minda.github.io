@@ -1,4 +1,7 @@
 module.exports = {
+
+  pathPrefix: "/myweb",
+
   siteMetadata: {
     title: `Ronny Minda V.`,
     description: `Soy desarrollador de Software Web, react, node`,
