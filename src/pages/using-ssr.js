@@ -1,11 +1,18 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { motion } from 'framer-motion';
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const UsingSSR = ({ serverData }) => {
   return (
+    <motion.div 
+    initial={{ opacity: 0, y: 200 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 1 }}
+  >
     <Layout>
       <Seo title="Using SSR" />
       <h1>
@@ -30,6 +37,7 @@ const UsingSSR = ({ serverData }) => {
       </p>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
+    </motion.div>
   )
 }
 
