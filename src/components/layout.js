@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 import styled, { createGlobalStyle } from 'styled-components'
 /* import { AnimatePresence, motion } from 'framer-motion';
 import { useLocation } from '@reach/router'; */
-import { StaticImage } from 'gatsby-plugin-image';
+/* import { StaticImage } from 'gatsby-plugin-image'; */
 
 
 
@@ -250,7 +250,7 @@ const Layout = ({ children }) => {
     <>
     <React.StrictMode>
     <Global />
-    <StaticImage className="logoty" src="../images/logo.png" alt="Logo" />
+{/*     <StaticImage className="logoty" src="../images/logo.png" alt="Logo" /> */}
 
     {/* <Mause className="mause"></Mause> */}
 

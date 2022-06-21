@@ -9,6 +9,9 @@ import Layout from "../components/layout"
 import Principal from "../components/principal";
 import Proyectos from "../components/proyectos";
 import Server from "../components/servers";
+import Loader from "../components/loader";
+
+import img from '../images/logo.png'
 // import { Link } from "gatsby"
 // import { StaticImage } from "gatsby-plugin-image"
 
@@ -34,12 +37,34 @@ const IndexPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
 
+        <meta property="og:locale" content="es_ES" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Ronny Minda .V" />
+        <meta property="og:description" content="Soy desrrolador de Software Frontend y Backend full rest, responsive design, diseño moderno, trabajo en equipo con git y por ultimo validaciones del lado del servidor." />
+        <meta property="og:url" content={ img } />
+        <meta property="og:site_name" content="Mi Web" />
+
+        {/* Facebook */}
+
         <meta property="og:title" content="Mi Web"></meta>
         <meta property="og:site_name" content="Ronny Minda .V"></meta>
-        <meta property="og:url" content="https://ronny-minda.github.io/"></meta>
+        <meta property="og:url" content="https://ronny-minda.github.io/myweb/"></meta>
         <meta property="og:description" content="Soy desrrolador de Software Frontend y Backend full rest, responsive design, diseño moderno, trabajo en equipo con git y por ultimo validaciones del lado del servidor."></meta>
         <meta property="og:type" content="website"></meta>
-        <meta property="og:image" content="https://ronny-minda.github.io/static/media/PERFIL.f69dc272.png"></meta>
+        <meta property="og:image" content={ img }></meta>
+
+        {/* twitter */}
+
+        <meta name="twitter:card" content="summary_large_image"></meta>
+        <meta name="twitter:title" content="Ronny Minda V."></meta>
+        <meta name="twitter:site" content="@MichaelMinda7"></meta>
+        <meta name="twitter:description" content="Soy desrrolador de Software Frontend y Backend full rest, responsive design, diseño moderno, trabajo en equipo con git y por ultimo validaciones del lado del servidor."></meta>
+        <meta name="twitter:image" content={ img }></meta>
+        <meta name="twitter:image:alt" content="texto img"></meta>
+
+        {/* whatsapp */}
+
+
 
 
 
@@ -56,6 +81,7 @@ const IndexPage = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
       >
+        <Loader />
 
         <Layout>
           <Principal />
