@@ -81,7 +81,7 @@ const IndexPage = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
       >
-        <Loader />
+        {/* <Loader /> */}
 
         <Layout>
           <Principal />
