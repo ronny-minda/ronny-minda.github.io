@@ -1,9 +1,5 @@
 import * as React from "react"
-import styled from "styled-components";
 
-const Svg = styled.svg`
-  /* width: 100%; */
-`;
 
 const GitHub = (props) => (
   <svg

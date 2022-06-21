@@ -242,16 +242,23 @@ const Div = styled.div`
             
 
             .claro & {
-                box-shadow: 4px 4px 6px 0 #0002, -4px -4px 6px #fff;
+                box-shadow: 4px 4px 5px 0 #0002, -4px -4px 5px #fff;
             }
             .oscuro & {
-                box-shadow: 4px 4px 6px 0 #181818, -4px -4px 6px #363636;
+                box-shadow: 4px 4px 6px 0 #040404, -4px -4px 6px #363636;
             }
             
             img {
                 height: 400px;
                 width: 400px;
                 border-radius: 50%;
+                transition: .5s background-color;
+                .claro & {
+                    background-color: #fff4;
+                }
+                .oscuro & {
+                    background-color: #0004;
+                }
                 
             }
             .filtro {
@@ -266,7 +273,7 @@ const Div = styled.div`
                     background-color: #fff2;
                 }
                 .oscuro & {
-                    background-color: #0002;
+                    background-color: #0004;
                 }
             }
 

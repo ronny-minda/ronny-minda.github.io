@@ -279,7 +279,7 @@ const Layout = ({ children }) => {
 
         <Div onClick={ modo } >
           {
-            tema == 'claro' ? <Sol /> : <Luna />
+            tema === 'claro' ? <Sol /> : <Luna />
           }
         </Div>
 

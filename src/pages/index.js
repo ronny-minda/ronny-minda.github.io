@@ -9,7 +9,7 @@ import Layout from "../components/layout"
 import Principal from "../components/principal";
 import Proyectos from "../components/proyectos";
 import Server from "../components/servers";
-import Loader from "../components/loader";
+/* import Loader from "../components/loader"; */
 
 import img from '../images/logo.png'
 // import { Link } from "gatsby"

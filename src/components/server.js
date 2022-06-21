@@ -1,7 +1,7 @@
 
 import React from "react";
 import styled from "styled-components";
-import { GatsbyImage } from 'gatsby-plugin-image';
+/* import { GatsbyImage } from 'gatsby-plugin-image'; */
 import { v4 as uuidv4 } from 'uuid';
 import { motion } from  'framer-motion';
 
@@ -173,7 +173,7 @@ const Server = ({dato}) => {
 
     // console.log({dato})
 
-    const { titulo, descripcion, tecnologias, link } = dato;
+    const { titulo, tecnologias, link } = dato;
 
 
     const tec = tecnologias.split(',');

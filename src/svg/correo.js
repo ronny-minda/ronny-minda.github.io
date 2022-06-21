@@ -1,25 +1,6 @@
 import * as React from "react"
-import styled from "styled-components"
 
-const Svg = styled.svg`
-    /* background-color: #1f2433;
-    border-radius: 50%;
 
-    padding: 10px;
-    height: 50px;
-    width: 50px;
-    stroke: #bebcbe;
-    transition: .3s;
-    box-shadow: -3px -3px 5px 2px #4A5578, 3px 3px 5px 6px #131827;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #20232c;
-      box-shadow: -3px -3px 5px 2px #4A5578, 3px 3px 5px 6px #131827, 0px 0px 5px 6px #131827;
-      stroke: #FF4343;
-
-    } */
-`;
 
 const Correo = (props) => (
   <svg
