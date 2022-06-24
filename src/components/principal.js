@@ -11,7 +11,7 @@ import GitHub from '../svg/gitHub';
 import Git from '../svg/git';
 import Noode from '../svg/node';
 
-import curriculum from '../archivos/CurriculumRonnyMinda1.pdf'
+import curriculum from '../archivos/curriculum.pdf'
 
 
 
@@ -136,6 +136,7 @@ const Div = styled.div`
 
         /* margin-left: 20px; */
         .info {
+            
             padding: 30px;
             width: 50%;
             height: 100%;
@@ -143,14 +144,17 @@ const Div = styled.div`
             display: flex;
             flex-direction: column;
             justify-content: start;
+            & > * {
+                user-select: text;
+            }
 
             h1 {
                 margin: 10px;
-                
                 font-weight: bold;
             }
             .miconte {
                 display: block;
+                
                 /* background-color: red; */
             }
             /* @media (max-width: 1200px) {

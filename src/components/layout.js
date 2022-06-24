@@ -29,6 +29,7 @@ const Global = createGlobalStyle`
     padding: 0;
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
+    user-select: none;
   }
   *, *:before, *::after {
       box-sizing: inherit;

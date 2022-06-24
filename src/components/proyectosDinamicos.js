@@ -2,11 +2,11 @@
 import React from "react";
 import { Link, graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { Helmet } from "react-helmet"
 
 import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 import { motion } from 'framer-motion';
+import Seo from "./seo";
 
 import Layout from "./layout";
 
@@ -150,30 +150,13 @@ const ProyectosDinamicos = ({data}) =>{
     return (
         <>
 
-      <Helmet>
-        <title>{nombre}</title>
-        <meta charset="UTF-8"></meta>
-        <meta name="description" content="Soy desrrolador de Software Frontend y Backend full rest, responsive design, diseño moderno, trabajo en equipo con git y por ultimo validaciones del lado del servidor."></meta>
-        <meta name="author" content="Ronny Minda V."></meta>
-        <meta name="keywords" content="website, development, software, design"></meta>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-
-
-
-        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,900&display=swap" rel="stylesheet"></link>
-
-        {/* <link rel="icon" type="ico" href={img}></link> */}
-      </Helmet>
-
+        <Seo titulo={ nombre } />
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.5 }}
         >
           <Layout>
 
