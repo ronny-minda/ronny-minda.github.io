@@ -1,26 +1,18 @@
-
 import React, { useState, useEffect } from "react"
-import styled, { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from "styled-components"
 /* import { AnimatePresence, motion } from 'framer-motion';
 import { useLocation } from '@reach/router'; */
 /* import { StaticImage } from 'gatsby-plugin-image'; */
 
+import Footer from "./footer"
+import Header from "./header"
 
-
-
-import Footer from "./footer";
-import Header from "./header";
-
-import Luna from '../svg/luna';
-import Sol from '../svg/sol';
-
+import Luna from "../svg/luna"
+import Sol from "../svg/sol"
 
 // import PropTypes from "prop-types"
 
 // let x, y;
-
-
-
 
 const Global = createGlobalStyle`
   * {
@@ -51,6 +43,10 @@ const Global = createGlobalStyle`
   }
   body::-webkit-scrollbar {
     width: 12px;
+  }
+
+  .opa {
+    opacity: 0;
   }
 
   
@@ -85,7 +81,7 @@ const Global = createGlobalStyle`
     height: 100px;
     width: 100px;
   }
-`;
+`
 
 const Div = styled.div`
   position: fixed;
@@ -96,13 +92,10 @@ const Div = styled.div`
   /* background-color: red; */
   height: 80px;
   width: 80px;
-  transition: .5s background-color;
+  transition: 0.5s background-color;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  
-  
 
   .claro & {
     /* background-color: #000; */
@@ -119,7 +112,7 @@ const Div = styled.div`
   }
   .oscuro & {
     /* background-color: #fff; */
-    background-color: #0E0E0E;
+    background-color: #0e0e0e;
     svg {
       height: 70%;
       width: 70%;
@@ -130,12 +123,12 @@ const Div = styled.div`
       filter: drop-shadow(0px 0px 5px #f00);
     }
   }
-  
+
   .claro &:active {
     /* background-color: #000; */
     transition: none;
     box-shadow: 3px 3px 5px 0 #0002 inset, -2px -2px 5px #fff inset;
-    background-color: #E6E6E6;
+    background-color: #e6e6e6;
   }
   .oscuro &:active {
     /* background-color: #fff; */
@@ -143,7 +136,7 @@ const Div = styled.div`
     box-shadow: 3px 3px 5px 0 #040404 inset, -2px -2px 5px #363636 inset;
     background-color: #171717;
   }
-`;
+`
 
 // const Mause = styled.div`
 //   background-color: #0CFF00;
@@ -168,129 +161,88 @@ const Div = styled.div`
 //     width: 3px;
 //     background-color: #AA00FF;
 //     border-radius: 50%;
-    
+
 //   }
 // `;
 
 const Layout = ({ children }) => {
-
-  
-
-/*   const location = useLocation();
+  /*   const location = useLocation();
 
   console.log(location); */
 
   // React.useEffect(() => {
-  
+
   //   window.addEventListener('mousemove', (e) => {
   //     const mause = document.querySelector('.mause');
   //     const y = e.pageY;
   //     const x = e.pageX;
-      
+
   //     mause.style.left = `${x - 10}px`;
   //     mause.style.top = `${y - 10}px`;
-    
+
   //     // console.log({x});
   //     // console.log({y});
   //   })
 
   // }, [])
 
-  useEffect( () => {
+  useEffect(() => {
+    let defecto = localStorage.getItem("tema")
 
-    let defecto = localStorage.getItem("tema");
-
-    if(!defecto) {
+    if (!defecto) {
       localStorage.setItem("tema", "claro")
     }
-
   }, [])
-  
 
+  const [tema, setTema] = useState("")
 
-  const [ tema, setTema ] = useState('');
+  useEffect(() => {
+    let defecto = localStorage.getItem("tema")
 
-  useEffect( () => {
-
-    let defecto = localStorage.getItem("tema");
-
-    setTema(defecto);
-
+    setTema(defecto)
   }, [tema])
 
   const modo = () => {
-
-      if(tema === 'oscuro') {
-        setTema('claro');
-        localStorage.setItem("tema", "claro");
-      }else {
-        setTema('oscuro');
-        localStorage.setItem("tema", "oscuro");
-      }
-
+    if (tema === "oscuro") {
+      setTema("claro")
+      localStorage.setItem("tema", "claro")
+    } else {
+      setTema("oscuro")
+      localStorage.setItem("tema", "oscuro")
+    }
   }
-  
-  useEffect( () => {
-    const body = document.body;
-    body.setAttribute('class', tema);
+
+  useEffect(() => {
+    const body = document.body
+    body.setAttribute("class", tema)
 
     setTimeout(() => {
-      body.setAttribute('style', 'transition: .5s background-color;');
-    }, 1);
-
-
+      body.setAttribute("style", "transition: .5s background-color;")
+    }, 1)
   }, [tema])
-  
-
-
-
-  
- 
 
   return (
     <>
-    <React.StrictMode>
-    <Global />
-{/*     <StaticImage className="logoty" src="../images/logo.png" alt="Logo" /> */}
+      <React.StrictMode>
+        <Global />
+        {/*     <StaticImage className="logoty" src="../images/logo.png" alt="Logo" /> */}
 
-    {/* <Mause className="mause"></Mause> */}
+        {/* <Mause className="mause"></Mause> */}
 
-      <div>
-
-
-        
-
-
-        
+        <div>
           <Header />
 
-
-          
           <main>
-            { children } {/* LLega el cuerpo de pagina! */}
+            {children} {/* LLega el cuerpo de pagina! */}
           </main>
 
           <Footer />
-          
 
-
-          
-          
-        
-
-        <Div onClick={ modo } >
-          {
-            tema === 'claro' ? <Sol /> : <Luna />
-          }
-        </Div>
-
-      </div>
+          <Div onClick={modo}>{tema === "claro" ? <Sol /> : <Luna />}</Div>
+        </div>
       </React.StrictMode>
     </>
   )
 }
 
 export default Layout
-
-
-

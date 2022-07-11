@@ -1,19 +1,25 @@
-import * as React from "react"
-import { motion } from 'framer-motion';
-
+import React, { useState } from "react"
+import { motion } from "framer-motion"
 
 import Layout from "../components/layout"
-import Seo from "../components/seo";
-import Principal from "../components/principal";
-import Proyectos from "../components/proyectos";
-import Server from "../components/servers";
-
+import Seo from "../components/seo"
+import Principal from "../components/principal"
+import Proyectos from "../components/proyectos"
+import Server from "../components/servers"
+import Loader from "../components/loader"
 
 const IndexPage = () => {
+  const [loader, setLoader] = useState(true)
+
+  setTimeout(() => {
+    setLoader(false)
+  }, 4000)
+
   return (
     <>
+      <Seo titulo="Ronny Minda V." />
 
-      <Seo titulo='Ronny Minda V.' />
+      {loader && <Loader />}
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -29,12 +35,7 @@ const IndexPage = () => {
           <Server />
           {/* <Div /> */}
         </Layout>
-
       </motion.div>
-
-      {
-        console.log("%cHola! ¿Interesado en ofrecerme un puesto en su empresa? Envíeme un correo electrónico a: %cronny.michael.minda.vera@gmail.com", "font-size: 18px;", "font-size: 18px; color: red; text-decoration: underline;")
-      }
     </>
   )
 }
