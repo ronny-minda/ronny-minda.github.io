@@ -45,9 +45,7 @@ const Global = createGlobalStyle`
     width: 12px;
   }
 
-  .opa {
-    opacity: 0;
-  }
+  
 
   
   .oscuro  {
